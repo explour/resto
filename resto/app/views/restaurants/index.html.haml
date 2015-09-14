@@ -1,0 +1,14 @@
+.col-md-9
+	- @restaurants.each_slice(3) do |group|
+		.row
+			-group.each do |single|
+				%a{:href => "/restaurants/#{single.id}/edit"}
+					.col-md-4.index-row
+						%img{:href => "#{single.description}", :style => "height: 270px; width: 270px"}
+						%br
+						%p#restaurant_name=single.name
+						%p=single.address_line_1
+						%p=single.city
+.col-md-3
+	Sidebar
+

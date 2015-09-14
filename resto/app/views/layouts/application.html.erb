@@ -1,14 +1,47 @@
 <!DOCTYPE html>
-<html>
 <head>
-  <title>Resto</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+	<meta charset="utf-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<%= yield %>
+	<title>resto</title>
+	<%= stylesheet_link_tag    'application', media: 'all' %>
+	<%= javascript_include_tag 'application' %>
+	<%= csrf_meta_tags %>
+	<link href='https://fonts.googleapis.com/css?family=Ubuntu:700italic' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+	<div class ="container">
+		<div class = "row" id = "navbar">
+
+			<div class = "col-md-8">
+				<h2 id = "logo">resto</h2>
+			</div>
+
+			<div class = "col-md-4">
+				<form class = "form-inline" action = "/restaurants" method = "POST">
+					<div class = "form-group">
+						<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+						<label for="restaurant_foursquare_id">Add Restaurant:</label>
+						<input type = "text" name = "restaurant[foursquare_id]" id="resturant_foursquare_id"></input>
+						<button type = "submit" class = "btn btn-default">Submit</button>
+					</div>
+				</form>
+			</div>
+
+		</div>
+
+		<div class ="row">
+			<div class = "col-md-12">
+				<hr style = "background-color: #D0021B; height: 5px; border: 0; margin-top: -10px" />
+			</div>
+		</div>
+
+		<div class = "row">
+			<%= yield %>
+		</div>
+
+	</div>
 
 </body>
-</html>

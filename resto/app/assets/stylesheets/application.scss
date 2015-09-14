@@ -12,4 +12,12 @@
  *
  *= require_tree .
  *= require_self
+ *= require bootstrap.min
  */
+
+#logo {
+	font-family: 'Ubuntu'; 
+	font-weight: 700; 
+	font-style: italic; 
+	color: #D0021B;
+}

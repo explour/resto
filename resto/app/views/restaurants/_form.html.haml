@@ -1,0 +1,18 @@
+= form_for(@restaurant) do |f|
+  .field
+    = f.label :name 
+    %br
+    = f.text_field :name
+
+  .field
+    = f.label :capacity
+    %br
+    = f.number_field :capacity
+
+  .field
+    = f.label :foursquare_id
+    %br
+    = f.text_field :foursquare_id
+
+  .actions
+    = f.submit
